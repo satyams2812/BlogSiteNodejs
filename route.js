@@ -206,19 +206,21 @@ routes.get('/',(req,res)=>{
 
 
 routes.post('/addmsg', checkAuthenticated ,(req,res)=>{
-    const messages = req.body.msg;
-  
     user.findOneAndUpdate(
         {email:req.user.email},
-        {$set :{
-            messages : req.body.msg
-        }},(err,suc)=>{
+        {$push :{
+            message : req.body['msg']
+        
+        },
+     
+     },(err,suc)=>{
             if(err) throw err;
             if(suc) console.log("Added Succesfully");
         }
     )
     res.redirect('/dashboard');
  });
+
 
   
 
@@ -234,10 +236,10 @@ routes.get("/",checkAuthenticated,  (req, res) =>{
             console.log(err);
         } else {
             res.render("home", { user: users })
+ 
         }
     })
     })
-
 
   
 

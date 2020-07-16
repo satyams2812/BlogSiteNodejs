@@ -34,50 +34,46 @@
 
    
        
-
-       <!-- <table>
-        <% user.forEach(function(item){ %>
-          <tr>
-            <div class="card">
       
-              <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                    
-                  <h3><%= item.name %></h3>
-                  <li> <%= item.messages %></li>             
+      <% for(var i=0; i<user.length; i++) { %>
+      
+          <% } %>
+          
+          <% for (var i = 0; i < user.length; i++) {%>
+          
+              <img src="<%= user[i].image %>" width="60px" height="60px" />
+            
+          
+            <!-- Nested loop below --> 
+            
+            <% for (var j = 0; j < user[i].message.length; j++) {%>
+            
+          
+              <!-- <% if (user[i].message[j] == user.name) { %>
+               
+              
+            
+                <% } else { %>
+           
+
+                  <% } %> -->
+
+
+                  <li>  <%= user[i].username %>  </li>
+                  <li>  <%= user[i].message[j] %>  </li> 
              
-                </blockquote>
-              </div>
-            </div>
-          </tr>
-          <% }) %>
-       
-       </table>  -->
 
-       <form >
+
+ 
+            <% } %>
+          
+          <% } %>
+
+
+
       
-        <% user.forEach(function(data, index){ %>
-            <div class="card">
-      
-                <div class="card-body">
-                  <blockquote class="blockquote mb-0">
-        
-                      
-                    <h4><%= data.messages%></h4>
-                         
-                  
-                  </blockquote>
-                </div>
-              </div>
-        
-     
-            <% }) %> 
-
-
-    
-    </form>
-
-
+         
+ 
 
 </body>
 </html>

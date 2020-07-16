@@ -40,16 +40,12 @@
       </nav>
 
 
-      <h3 class="p-4">Welcome  </h3>
+      <h3 class="p-4">Welcome <%= user.name %>  </h3>
     
      
 
       <img src='<%= user.image %>' style="width: 200px; height: 200px;" />
      
-     <li> <%= user %> </li>
-     
-      <h5> <%= user.username %> </h5>
-     <h5> <%= user.image %> </h5>
    
    
         <form action="/image" method="POST" enctype="multipart/form-data">
@@ -67,7 +63,7 @@
 
         
            
-            <div class="form-group">
+            <div class="form-group">  
                 <input type="text" placeholder="<%=user.name %>" name="identity" id="identity"  class="form-control" >
               </div>
 

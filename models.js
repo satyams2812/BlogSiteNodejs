@@ -25,9 +25,22 @@ const userschema = new mongoose.Schema({
     image:{
       type : Buffer
     },
-    messages : {
-        type: String,
-    }
+    date:{
+        type : Date,
+        default : Date.now
+    },
+ message : [{
+            type : String,
+        },
+        {
+      date : {
+                type : Date,
+                default : Date.now
+      }
+        }]
+    
+  
+
 });
 
 
